@@ -27,8 +27,8 @@ with open(filename, 'r') as input_f:
     for row in reader:
       lst = row[0].split('\t')
       writer.writerow(lst)
-
-# Puts in DataFrame 'data' the data of 'amazon_fires.csv', with header in English
+      
+# Puts in DataFrame 'data' the file 'amazon_fires.csv', with header in English, and no point for thousands
 # Puts in 'months_unique' the list of months (in portuguese) of the month column
 data = pd.read_csv('amazon_fires.csv', names=['year', 'state', 'month', 'number', 'date'], thousands = '.')
 months_unique = list(data.month.unique())
