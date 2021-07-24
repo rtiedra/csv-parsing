@@ -30,40 +30,39 @@ females = female_population['VALUE']
 swiss = swiss_population['VALUE']
 foreign = foreign_population['VALUE']
 
-# Creates a figure with one axis on it:
+# Creates a multiple plot figure;
+# Fixes the width of the bars (1 = maximal width);
+# Creates the bar charts;
+# Defines the titles and legend;
+# Plots the resulting figure;
 fig, ax = plt.subplots()
-
-# Fixes the width of the bars (1 = maximal width):
 width = 0.35
 
-# Creates the bar charts
 ax.bar(years, males, width, color='darkblue', label='Male')
 ax.bar(years+width, females, width, color='dodgerblue', label='Female')
 
-# Defines the titles and legend:
 plt.title('Number of male/female residents in Switzerland (years 1950-2019)', fontsize=13)
 plt.xlabel('year', fontsize=13)
 plt.ylabel('number', fontsize=13)
 ax.legend()
 
-# Plots the resulting figure:
 plt.tight_layout()
 plt.show()
 
-# Fixes a new width of the bars (1 = maximal width):
+# Fixes a new width of the bars (1 = maximal width);
+# Creates a second bar chart;
+# Defines the titles and legend;
+# Plots the resulting figure:
 width_bis = 0.5
 
-# Creates a second bar chart:
 p1 = plt.bar(years, swiss, width_bis, color='royalblue', label='Swiss')
 p2 = plt.bar(years, foreign, width_bis, color='lightskyblue', bottom=swiss, label='Foreign')
 
-# Defines the titles and legend:
 plt.title('Number of swiss/foreign residents in Switzerland (years 1950-2019)', fontsize=13)
 plt.xlabel('year', fontsize=13)
 plt.ylabel('number', fontsize=13)
 plt.legend()
 
-# Plots the resulting figure:
 plt.tight_layout()
 plt.show()
 
